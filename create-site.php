@@ -1,0 +1,1 @@
+<?php session_start(); include 'config.php'; $email=$_SESSION['email']; $c=mysqli_fetch_assoc(mysqli_query($conn,"SELECT COUNT(*) c FROM websites WHERE user_email='$email'")); if($c['c']>=3) die('Limit reached'); ?><form action='create-site-action.php' method='post'><input name='site_name' placeholder='Site name' required><button>Create</button></form>

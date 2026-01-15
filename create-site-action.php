@@ -1,0 +1,1 @@
+<?php session_start(); include 'config.php'; $email=$_SESSION['email']; $name=$_POST['site_name']; $count=mysqli_fetch_assoc(mysqli_query($conn,"SELECT COUNT(*) c FROM websites WHERE user_email='$email'")); if($count['c']>=3) die('Limit reached'); mysqli_query($conn,"INSERT INTO websites(user_email,site_name) VALUES('$email','$name')"); header('Location: dashboard.php'); ?>

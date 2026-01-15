@@ -1,0 +1,1 @@
+<?php include 'config.php'; $e=$_POST['email']; $p=$_POST['password']; mysqli_query($conn,"INSERT INTO users(email,password) VALUES('$e','$p')"); header('Location: login.html'); ?>

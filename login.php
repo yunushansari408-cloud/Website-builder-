@@ -1,0 +1,1 @@
+<?php session_start(); include 'config.php'; $e=$_POST['email']; $p=$_POST['password']; $q=mysqli_query($conn,"SELECT * FROM users WHERE email='$e' AND password='$p'"); if(mysqli_num_rows($q)){ $_SESSION['email']=$e; header('Location: dashboard.php'); } else echo 'Invalid'; ?>
